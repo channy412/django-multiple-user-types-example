@@ -2,10 +2,15 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.html import escape, mark_safe
 
-
 class User(AbstractUser):
     is_student = models.BooleanField(default=False)
     is_teacher = models.BooleanField(default=False)
+    google_connected = models.BooleanField(default=False)
+    google_first_name = models.CharField(max_length=30, blank=True)
+    google_last_name = models.CharField(max_length=30, blank=True)
+    google_gender = models.CharField(max_length=30, blank=True) 
+    google_avatar = models.CharField(max_length=30, blank=True) 
+    google_id = models.CharField(max_length=30, blank=True) 
 
 
 class Subject(models.Model):

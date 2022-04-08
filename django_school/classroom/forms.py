@@ -14,6 +14,11 @@ class TeacherSignUpForm(UserCreationForm):
     def save(self, commit=True):
         user = super().save(commit=False)
         user.is_teacher = True
+        # user.google_first_name = ""
+        # user.google_last_name = ""
+        # user.google_avatar = ""
+        # user.google_gender = ""
+        # user.google_connected = False
         if commit:
             user.save()
         return user

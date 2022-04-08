@@ -33,6 +33,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.sites',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -43,6 +46,8 @@ INSTALLED_APPS = [
     'crispy_forms',
 
     'classroom',
+
+
 ]
 
 MIDDLEWARE = [
@@ -140,3 +145,9 @@ MESSAGE_TAGS = {
 # Third party apps configuration
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+with open('client_secret_key.txt') as secret_key_f:
+    GP_CLIENT_SECRET = secret_key_f.read().strip()
+GP_CLIENT_ID = "1013775062350-70mik1chtiva0g8onfu3qlotg2702u14.apps.googleusercontent.com"
+
+SITE_ID = 2
